@@ -1,5 +1,8 @@
 # MicroPython python3
 # vim: set sw=2 ai expandtab
+#
+# Released under the Apache 2.0 license.
+# http://www.apache.org/licenses/
 
 import os
 import sys

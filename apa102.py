@@ -1,5 +1,8 @@
 # MicroPython code to control APA102 LEDs via the SPI bus
 # vim: set sw=2 ai expandtab
+#
+# Released under the Apache 2.0 license.
+# http://www.apache.org/licenses/
 
 import time
 
