@@ -5,14 +5,11 @@ use something much less powerful than an IBM PC, Commodore, or Apple II.
 
 ## Requirements
 
-An ATtiny85 microcontroller.  An ATtiny45 can fit, so it'd _probably_ work.
-
-Some way to flash your program into it.
-
-An apa102 aka DotStar LED disc such as Adafruit's lovely
-https://www.adafruit.com/product/2477.
-
-A 5V DC multi-amp power supply (a USB-C 5V 3A brick works for me).  You'll need
+1. An ATtiny85 microcontroller.  An ATtiny45 can fit, so it'd _probably_ work.
+1. Some way to flash your program into it.
+1. An apa102 aka DotStar LED disc such as [Adafruit's lovely DotStar
+disc](https://www.adafruit.com/product/2477).
+1. A 5V DC multi-amp power supply (a USB-C 5V 3A brick works for me).  You'll need
 a more amps if you choose to turn the brightness up to 11 (or if a coding bug
 sets all of the LEDs to full on full brightness).
 
@@ -25,10 +22,11 @@ expanded upon my test pattern code run during `setup()` to visually debug the
 results.  LED disc as console for printf debugging anyone?
 
 I used my old MicroPython code as a guide for the implementation.  During the
-development process I made several mistakes before I had anything resembling working:
+development process **I made several mistakes** before I had anything
+resembling working:
 
 * I left myself a `// TODO: set initial state` that I forgot about and wondered why
-   the display remained blank.
+  the display remained blank.
 * I stayed up until 2am.
 * I mixed up left and right shift when it came to getting bits in and out of a byte.
 * I stayed up until 2am again.
@@ -53,7 +51,8 @@ development process I made several mistakes before I had anything resembling wor
 
 ## Hardware hookups
 
-As I used an "old" Adafruit Gemma, I'll describe things in terms of that.
+As I used an "old" [Adafruit Gemma](https://www.adafruit.com/product/1222),
+I'll describe things in terms of that.
 
 * 5V DC red wire: To your LED disc red wire _and_ Gemma `Vout` pad.
 * 5V DC black ground wire: To your LED disc black wire _and_ Gemma `GND` pad.
