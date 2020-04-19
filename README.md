@@ -19,8 +19,7 @@ disc.run()
 ```
 ## What it looks like
 
-![LIFE on a Circle - LED disc Animation]
-(example_animation.gif)
+![LIFE on a Circle - LED disc Animation](example_animation.gif)
 
 I have the LEDs above a few cm behind some wax paper to diffuse the light.
 

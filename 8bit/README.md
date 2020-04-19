@@ -3,6 +3,8 @@
 Why use a giant computer running MicroPython or CircuitPython when you could
 use something much less powerful than an IBM PC, Commodore, or Apple II.
 
+![8bit Circle Of Life still image](photos/attiny85_cga_life.jpg)
+
 ## Requirements
 
 1. An ATtiny85 microcontroller.  An ATtiny45 can fit, so it'd _probably_ work.
@@ -81,3 +83,7 @@ this on modern microcontrollers!  These 8-bit AVRs are very versatile.  =)
 8bit is fun.  There is none.  Since our famed mathematician [John
 Conway](https://en.wikipedia.org/wiki/John_Horton_Conway) died, recreating my
 Circle Of Life project is my personal fitting tribute.
+
+## Photos
+
+![My hacky Gemma programming setup 2020](photos/gemma_programming_hell.jpg)
