@@ -39,6 +39,7 @@ def tearDownModule():
 
 
 class TestLife(unittest.TestCase):
+
   def testConstructor(self):
     l = life.Life()
 
@@ -54,6 +55,29 @@ class TestLife(unittest.TestCase):
     l.make_torus()
     pprint.pprint(l.run(initial_state=[254], iterations=5, sleep_ms=0))
 
+
+def emit_c_struct_of_neighbors(calculated_neighbors):
+  if len(calculated_neighbors) > 255:
+    raise RuntimeError('Cannot support over 255 LEDs while based on byte values.')
+  max_neighbors = max(len(ns) for ns in calculated_neighbors)
+  print('')
+  print(f'const uint8_t PROGMEM kDiscNeighbors[{apa102.NUM_DISC_LEDS}][{max_neighbors}] = ' + '{')
+  for led_num, led_neighbors in enumerate(calculated_neighbors):
+    print('  {', end='')
+    neighbors = bytearray(b'\xff'*max_neighbors)
+    neighbors[:len(led_neighbors)] = led_neighbors
+    for neighbor_num, value in enumerate(neighbors):
+      print(f'{value}', end='')
+      if neighbor_num+1 < len(neighbors):
+        print(', ', end='')
+    print('}', end='')
+    print(',') if led_num+1 < len(calculated_neighbors) else print()
+  print('};\n')
+
+
+
+class TestNeighbors(unittest.TestCase):
+
   def testNeighborCalculation(self):
     calculated_neighbors = self._calc_neighbors_for_test()
     l = life.Life()
@@ -61,7 +85,8 @@ class TestLife(unittest.TestCase):
       print('\n    self._neighbors = \\')
       pprint.pprint(calculated_neighbors)
     self.assertEqual(l._neighbors, calculated_neighbors)
-
+    emit_c_struct_of_neighbors(calculated_neighbors)
+    
   def _calc_neighbors_for_test(self):
     neighbors = [b'']*apa102.NUM_DISC_LEDS
     for ring_no, num_leds in enumerate(apa102.DISC_RINGS):
