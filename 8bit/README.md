@@ -43,11 +43,11 @@ resembling working:
 
 * Sleep.
 * Craft a device programming harness.
-* Choose your future.
+* _Choose your future._
 * Craft a device deployment harness.
-* Choose life.
+* _Choose life._
 * Figure out a unittesting story in platformio.
-* Choose DIY and wondering who you are on a Sunday morning.
+* _Choose DIY and wondering who you are on a Sunday morning._
 
 ## Hardware hookups
 
@@ -79,6 +79,6 @@ this on modern microcontrollers!  These 8-bit AVRs are very versatile.  =)
 
 ## Conclusion
 
-8bit is fun / There is none.  Since our famed mathematician [John
+8bit is fun.  There is none.  Since our famed mathematician [John
 Conway](https://en.wikipedia.org/wiki/John_Horton_Conway) died, recreating my
 Circle Of Life project is my personal fitting tribute.
