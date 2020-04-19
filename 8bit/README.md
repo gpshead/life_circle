@@ -58,7 +58,7 @@ I'll describe things in terms of that.
 * 5V DC black ground wire: To your LED disc black wire _and_ Gemma `GND` pad.
 * A green wire from Gemma pad `D1` to your LED disc `DI` for the data bus.
 * A yellow wire from Gemma pad `D2` to your LED disc `CI` for the bus clock.
-* **Do not** connect a separate power supply _and_ a USB connection.  For me
+* **Do not** connect a separate power supply **and** a USB connection.  For me
   the USB brick supplying power via the USB port works, but it isn't meant
   for high brightness levels of power.  Beware.
 
@@ -67,12 +67,11 @@ connector the Gemma runs the attiny85 at 3.3V.  But that logic level is just
 high enough for my dotstar LEDs to read zero/one even though they require 5V
 logic.
 
-If 3V logic gives you trouble, you can also run the Gemma at 5V if you have any
-issues with this or want to increase its speed to a whopping 16Mhz in your
-code.  To do so, supply 5V DC to the `3V` pad on the Gemma _with no other power
-connection (no USB or JST or `Vout`)_, bypassing its tiny 3v3 voltage
-regulator.  I programmed my Gemma this was as I was using a 5V Arduino.  Other
-than the power and data LEDs being brighter than usual, I had no issues.  YMMV.
+If 3V logic gives you trouble, you can also run the Gemma at 5V.  To do so,
+supply 5V DC to the `3V` pad on the Gemma _with no other power connection (no
+USB or JST or `Vout`)_, bypassing its tiny 3v3 voltage regulator.  I programmed
+my Gemma this was as I was using a 5V Arduino.  Other than the power and data
+LEDs being brighter than usual, I had no issues.  YMMV.
 
 The attiny85 is a very versatile device.  It can also run at 5V.  Do not try
 this on modern microcontrollers!  These 8-bit AVRs are very versatile.  =)
